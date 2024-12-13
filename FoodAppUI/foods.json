@@ -1,0 +1,114 @@
+[
+    {
+        "categoryId": 1,
+        "name": "Burger",
+        "image": "burger",
+        "foods": [
+            {
+                "foodId": 1,
+                "name": "Big Mac",
+                "image": "bigMac",
+                "ingredients": "Buns, beef, cheese, lettuce, pickles, onions",
+                "price": 5
+            },
+            {
+                "foodId": 2,
+                "name": "Cheese Burger",
+                "image": "cheeseBurger",
+                "ingredients": "Buns, cheese, lettuce, onions",
+                "price": 4.2
+            }
+        ]
+    },
+    {
+        "categoryId": 2,
+        "name": "Asian",
+        "image": "asian",
+        "foods": [
+            {
+                "foodId": 3,
+                "name": "noodles",
+                "image": "noodles",
+                "ingredients": "noonoodles, sauce, vegetables",
+                "price": 8
+            },
+            {
+                "foodId": 4,
+                "name": "sushi",
+                "image": "sushi",
+                "ingredients": "sushi, sauce, vegetables",
+                "price": 10
+            }
+        ]
+    },
+    {
+        "categoryId": 3,
+        "name": "Italian",
+        "image": "italian",
+        "foods": [
+            {
+                "foodId": 5,
+                "name": "Pizza",
+                "image": "pizza",
+                "ingredients": "pizza, sauce, vegetables",
+                "price": 7
+            },
+            {
+                "foodId": 6,
+                "name": "Pasta",
+                "image": "pasta",
+                "ingredients": "pasta, sauce, vegetables",
+                "price": 15
+            }
+        ]
+    },
+    {
+        "categoryId": 4,
+        "name": "Desert",
+        "image": "desert",
+        "foods": [
+            {
+                "foodId": 7,
+                "name": "Cheesecake",
+                "image": "cheesecake",
+                "ingredients": "cheese, cream ",
+                "price": 7
+            },
+            {
+                "foodId": 8,
+                "name": "tirramisu",
+                "image": "tirramisu",
+                "ingredients": "choose between chocolate or vanilla",
+                "price": 15
+            },
+            {
+                "foodId": 9,
+                "name": "honey bomb",
+                "image": "honeyBomb",
+                "ingredients": "honey, chocolate",
+                "price": 15
+            }
+        ]
+    },
+    {
+        "categoryId": 5,
+        "name": "Salad",
+        "image": "salad",
+        "foods": [
+            {
+                "foodId": 10,
+                "name": "Sezar",
+                "image": "sezar",
+                "ingredients": "vegetables, chiken",
+                "price": 16
+            },
+            {
+                "foodId": 11,
+                "name": "mimoza",
+                "image": "mimoza",
+                "ingredients": "carrot, vegetables",
+                "price": 9
+            }
+        ]
+    }
+]
