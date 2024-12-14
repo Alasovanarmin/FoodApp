@@ -20,7 +20,7 @@ class HomeController: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        collectionView.register(UINib(nibName: "\(CategoryCell.self)", bundle: nil), forCellWithReuseIdentifier: "CategoryCell")
+        collectionView.register(UINib(nibName: "\(ProductCell.self)", bundle: nil), forCellWithReuseIdentifier: "ProductCell")
         
         let cartButton = UIBarButtonItem(image: UIImage(systemName: "cart"), style: .plain, target: self, action: nil /*action: #selector(cartButtonTapped)*/)
         self.navigationItem.rightBarButtonItem = cartButton
@@ -34,15 +34,21 @@ extension HomeController: UICollectionViewDataSource, UICollectionViewDelegate, 
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let categoryCell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(CategoryCell.self)", for: indexPath) as! CategoryCell
-        
-        categoryCell.configure(category: viewModel.getCategoryByIndex(index: indexPath.row))
-        return categoryCell
+        let productCell = collectionView.dequeueReusableCell(withReuseIdentifier: "\(ProductCell.self)", for: indexPath) as! ProductCell
+        productCell.configure(category: viewModel.getCategoryByIndex(index: indexPath.row))
+        return productCell
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 //        CGSize(width: collectionView.frame.width / 2 - 16, height: 200)
         let width = (collectionView.frame.width - 30) / 2 // 2 sütunlu layout
         return CGSize(width: width, height: width + 40) // Şəkil + yazı
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let controller = storyboard?.instantiateViewController(withIdentifier: "\(FoodListController.self)") as! FoodListController
+        
+        controller.viewModel.setFoods(foods: viewModel.getCategoryByIndex(index: indexPath.row).foods ?? [])
+        navigationController?.show(controller, sender: nil)
     }
 }

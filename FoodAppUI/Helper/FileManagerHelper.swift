@@ -55,5 +55,28 @@ class FileManagerHelper {
         
         return []
     }
+    
+    func readBasketData() -> [Food] {
+        let filePath = getFilePathInDocument(fileName: "basket.json")
+        
+        if let dataJson = try? Data(contentsOf: filePath),
+           let data = try? JSONDecoder().decode([Food].self, from: dataJson) {
+            return data
+        }
+
+        return []
+    }
+    
+    func writeBasketData(foods: [Food])
+    {
+        let jsonFood = try! JSONEncoder().encode(foods)
+        let filePath = getFilePathInDocument(fileName: "basket.json")
+        
+        do {
+            try jsonFood.write(to: filePath)
+        } catch {
+            
+        }
+    }
 }
 

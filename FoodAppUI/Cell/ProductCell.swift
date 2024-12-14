@@ -7,9 +7,12 @@
 
 import UIKit
 
-class CategoryCell: UICollectionViewCell {
+class ProductCell: UICollectionViewCell {
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var imageView: UIImageView!
+    @IBOutlet private weak var basketButton: UIButton!
+    
+    var addToBasketAction: (() -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,6 +32,17 @@ class CategoryCell: UICollectionViewCell {
     func configure(category: CategoryFood){
         nameLabel.text = category.name
         imageView.image = UIImage(named: category.image!)
+        basketButton.isHidden = true
     }
-
+    
+    func configure(food: Food){
+        basketButton.isHidden = false
+        imageView.image = UIImage(named: food.image!)
+        nameLabel.text = food.name
+    }
+    
+    @IBAction func basketTappedButton(_ sender: Any) {
+        addToBasketAction?()
+    }
+    
 }

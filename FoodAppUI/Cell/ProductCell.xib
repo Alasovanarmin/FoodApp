@@ -3,13 +3,15 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategoryCell" id="gTV-IL-0wX" customClass="CategoryCell" customModule="FoodAppUI" customModuleProvider="target">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProductCell" id="gTV-IL-0wX" customClass="ProductCell" customModule="FoodAppUI" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -30,6 +32,17 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rkJ-M8-wG4">
+                        <rect key="frame" x="149.66666666666666" y="16" width="46.333333333333343" height="28"/>
+                        <color key="tintColor" systemColor="systemBackgroundColor"/>
+                        <state key="normal" title="Button"/>
+                        <buttonConfiguration key="configuration" style="plain" buttonSize="small">
+                            <imageReference key="image" image="basket.fill" catalog="system" symbolScale="large"/>
+                        </buttonConfiguration>
+                        <connections>
+                            <action selector="basketTappedButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="pll-fw-IhO"/>
+                        </connections>
+                    </button>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
@@ -37,13 +50,22 @@
                 <constraint firstItem="1zP-w9-Hpr" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="3jr-39-1z0"/>
                 <constraint firstItem="xDL-nH-9yC" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="5aZ-aV-nSB"/>
                 <constraint firstItem="1zP-w9-Hpr" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="B9T-Ju-STy"/>
+                <constraint firstAttribute="trailing" secondItem="rkJ-M8-wG4" secondAttribute="trailing" constant="4" id="TAt-tV-dNX"/>
+                <constraint firstItem="rkJ-M8-wG4" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="16" id="Zy0-H5-ToT"/>
                 <constraint firstAttribute="bottom" secondItem="xDL-nH-9yC" secondAttribute="bottom" constant="24" id="dk5-pj-yUc"/>
             </constraints>
             <connections>
+                <outlet property="basketButton" destination="rkJ-M8-wG4" id="tDQ-lR-b7J"/>
                 <outlet property="imageView" destination="1zP-w9-Hpr" id="HKo-Uf-luv"/>
                 <outlet property="nameLabel" destination="xDL-nH-9yC" id="i5W-bI-UgE"/>
             </connections>
             <point key="canvasLocation" x="138.93129770992365" y="19.718309859154932"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="basket.fill" catalog="system" width="128" height="108"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
