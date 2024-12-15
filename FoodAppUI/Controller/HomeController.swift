@@ -22,9 +22,14 @@ class HomeController: UIViewController {
         
         collectionView.register(UINib(nibName: "\(ProductCell.self)", bundle: nil), forCellWithReuseIdentifier: "ProductCell")
         
-        let cartButton = UIBarButtonItem(image: UIImage(systemName: "cart"), style: .plain, target: self, action: nil /*action: #selector(cartButtonTapped)*/)
+        let cartButton = UIBarButtonItem(image: UIImage(systemName: "cart"), style: .plain, target: self, action: #selector(basketButtonTapped))
         self.navigationItem.rightBarButtonItem = cartButton
 
+    }
+    
+    @objc func basketButtonTapped() {
+        let controller = storyboard?.instantiateViewController(withIdentifier: "\(BasketController.self)") as! BasketController
+        navigationController?.show(controller, sender: nil)
     }
 }
 

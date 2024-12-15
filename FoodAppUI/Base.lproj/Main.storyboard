@@ -241,6 +241,69 @@
             </objects>
             <point key="canvasLocation" x="3103" y="643"/>
         </scene>
+        <!--Basket Controller-->
+        <scene sceneID="WY9-th-jMm">
+            <objects>
+                <viewController storyboardIdentifier="BasketController" id="3z6-vT-PmB" customClass="BasketController" customModule="FoodAppUI" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9sR-3V-2n8">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4 items for 42 $" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QlP-Nq-9xG">
+                                <rect key="frame" x="12" y="79" width="369" height="20.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="eGr-x7-CAO">
+                                <rect key="frame" x="12" y="111.33333333333331" width="369" height="647.66666666666674"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BasketCell" id="tLx-k8-Xef">
+                                        <rect key="frame" x="0.0" y="50" width="369" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tLx-k8-Xef" id="wc6-KG-Zpv">
+                                            <rect key="frame" x="0.0" y="0.0" width="369" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CKZ-Dt-IE1">
+                                <rect key="frame" x="12" y="771" width="369" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Proceed to checkout">
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="basketCheckOutTappedButton:" destination="3z6-vT-PmB" eventType="touchUpInside" id="VCF-on-Jbu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="M4Z-Re-ds7"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="CKZ-Dt-IE1" firstAttribute="top" secondItem="eGr-x7-CAO" secondAttribute="bottom" constant="12" id="2Bp-vD-JFf"/>
+                            <constraint firstItem="QlP-Nq-9xG" firstAttribute="leading" secondItem="M4Z-Re-ds7" secondAttribute="leading" constant="12" id="8O1-LX-Ear"/>
+                            <constraint firstItem="QlP-Nq-9xG" firstAttribute="top" secondItem="M4Z-Re-ds7" secondAttribute="top" constant="20" id="DQX-Zq-Zrh"/>
+                            <constraint firstItem="eGr-x7-CAO" firstAttribute="leading" secondItem="M4Z-Re-ds7" secondAttribute="leading" constant="12" id="NT5-gq-K3Z"/>
+                            <constraint firstItem="M4Z-Re-ds7" firstAttribute="trailing" secondItem="QlP-Nq-9xG" secondAttribute="trailing" constant="12" id="e9I-HN-FM8"/>
+                            <constraint firstItem="CKZ-Dt-IE1" firstAttribute="leading" secondItem="M4Z-Re-ds7" secondAttribute="leading" constant="12" id="fCr-XM-2jT"/>
+                            <constraint firstItem="M4Z-Re-ds7" firstAttribute="trailing" secondItem="eGr-x7-CAO" secondAttribute="trailing" constant="12" id="gA0-Ys-aMD"/>
+                            <constraint firstItem="M4Z-Re-ds7" firstAttribute="trailing" secondItem="CKZ-Dt-IE1" secondAttribute="trailing" constant="12" id="ivB-pb-iZ3"/>
+                            <constraint firstItem="eGr-x7-CAO" firstAttribute="top" secondItem="QlP-Nq-9xG" secondAttribute="bottom" constant="12" id="l3S-Aa-HCp"/>
+                            <constraint firstItem="M4Z-Re-ds7" firstAttribute="bottom" secondItem="CKZ-Dt-IE1" secondAttribute="bottom" constant="12" id="o3m-bE-14g"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="basketHeader" destination="QlP-Nq-9xG" id="pNi-3b-ELm"/>
+                        <outlet property="tableView" destination="eGr-x7-CAO" id="oHq-Qv-9aP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OQU-MP-nOx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3815" y="643"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="kal-cW-a5p">
             <objects>
