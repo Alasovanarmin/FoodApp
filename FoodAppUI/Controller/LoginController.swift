@@ -9,9 +9,7 @@ import UIKit
 
 class LoginController: UIViewController {
     @IBOutlet weak var iconImage: UIImageView!
-    
     @IBOutlet weak var emailInput: UITextField!
-    
     @IBOutlet weak var passwordInput: UITextField!
     
     let viewModel = LoginViewModel()

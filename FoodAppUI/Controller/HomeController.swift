@@ -24,11 +24,19 @@ class HomeController: UIViewController {
         
         let cartButton = UIBarButtonItem(image: UIImage(systemName: "cart"), style: .plain, target: self, action: #selector(basketButtonTapped))
         self.navigationItem.rightBarButtonItem = cartButton
+        
+        let profileButton = UIBarButtonItem(image: UIImage(systemName: "person"), style: .plain, target: self, action: #selector(profileButtonTapped))
+        self.navigationItem.leftBarButtonItem = profileButton
 
     }
     
     @objc func basketButtonTapped() {
         let controller = storyboard?.instantiateViewController(withIdentifier: "\(BasketController.self)") as! BasketController
+        navigationController?.show(controller, sender: nil)
+    }
+    @objc func profileButtonTapped() {
+        let controller = storyboard?.instantiateViewController(identifier: "\(ProfileController.self)") as! ProfileController
+        
         navigationController?.show(controller, sender: nil)
     }
 }

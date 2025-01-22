@@ -9,11 +9,8 @@ import UIKit
 
 class RegisterController: UIViewController {
     @IBOutlet private weak var iconImage: UIImageView!
-    
     @IBOutlet private weak var fullNameInput: UITextField!
-    
     @IBOutlet private weak var emailInput: UITextField!
-    
     @IBOutlet private weak var passwordInput: UITextField!
     
     var registerAction: ((User) -> Void)?
